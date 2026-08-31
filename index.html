@@ -19,7 +19,7 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section - Full Width & Height Cover */
+    /* Hero Section Setup */
     .hero {
       position: relative;
       width: 100vw;
@@ -31,7 +31,6 @@
       overflow: hidden;
     }
 
-    /* Full Background Image (পুরো স্ক্রিন জুড়ে ব্যাকগ্রাউন্ড) */
     .hero-bg-image {
       position: absolute;
       top: 0;
@@ -39,22 +38,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center; /* আপনার পজিশন নিখুঁত রাখার জন্য */
+      object-position: top center;
       z-index: 1;
     }
 
-    /* Gradient Overlay (লেখা স্পষ্ট দেখানোর জন্য বাম দিকে হালকা ডার্ক শেড) */
+    /* Gradient Overlay Desktop */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.6) 55%, rgba(18, 18, 20, 0.1) 100%);
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.5) 55%, rgba(18, 18, 20, 0) 100%);
       z-index: 2;
     }
 
-    /* Top Navigation Bar */
+    /* Header & Navigation */
     header {
       display: flex;
       justify-content: flex-end;
@@ -71,13 +70,13 @@
       margin-right: 30px;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
       list-style: none;
       gap: 30px;
     }
 
-    nav ul li a {
+    .nav-links li a {
       color: #e0e0e0;
       text-decoration: none;
       font-size: 14px;
@@ -86,7 +85,7 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
-    nav ul li a.active, nav ul li a:hover {
+    .nav-links li a.active, .nav-links li a:hover {
       color: #ff5e24;
     }
 
@@ -100,9 +99,25 @@
       font-size: 11px;
       letter-spacing: 1px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: inline-block;
     }
 
-    /* Content Area */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Content Styling */
     .hero-content {
       width: 50%;
       z-index: 3;
@@ -140,6 +155,7 @@
     .social-links {
       display: flex;
       gap: 15px;
+      margin-bottom: 25px;
     }
 
     .social-links a {
@@ -238,7 +254,6 @@
       color: #ffe0d6;
     }
 
-    /* Stats Section */
     .stats-container {
       background: #17171a;
       padding: 45px 6%;
@@ -266,30 +281,78 @@
       font-size: 12px;
     }
 
-    /* Mobile Responsive */
+    /* Mobile Specific Styles */
     @media (max-width: 900px) {
       header {
-        justify-content: center;
-        flex-direction: column;
-        gap: 15px;
-        padding-top: 20px;
+        justify-content: flex-end;
+        padding: 20px 6%;
       }
-      nav { margin-right: 0; }
+
+      header .nav-btn {
+        display: none; /* ডেক্সটপ টপ বাটন মোবাইল থেকে হাইড */
+      }
+
+      .menu-toggle {
+        display: flex; /* ৩ ডট বার দৃশ্যমান করা */
+      }
+
+      nav {
+        margin-right: 0;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 6%;
+        background: rgba(23, 23, 26, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        width: 180px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        gap: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
       .hero {
-        padding-top: 140px;
-        padding-bottom: 60px;
+        padding-top: 120px;
+        padding-bottom: 50px;
         height: auto;
         min-height: 100vh;
+        align-items: flex-end;
       }
+
+      /* মুখের উপর থেকে কালো ফেড পুরোপুরি সরিয়ে দেয়া হলো */
+      .hero-overlay {
+        background: linear-gradient(to top, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.2) 60%, rgba(18, 18, 20, 0) 100%);
+      }
+
       .hero-content {
         width: 100%;
         text-align: center;
+        margin-top: 0;
+        padding-bottom: 20px;
       }
-      .hero-title { font-size: 38px; }
-      .hero-overlay {
-        background: linear-gradient(to bottom, rgba(18, 18, 20, 0.9) 30%, rgba(18, 18, 20, 0.5) 100%);
+
+      .hero-title {
+        font-size: 36px;
       }
-      .social-links { justify-content: center; }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .mobile-talk-btn {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
       .services-grid { grid-template-columns: 1fr; }
       .stats-container { grid-template-columns: repeat(2, 1fr); gap: 30px; }
     }
@@ -297,10 +360,10 @@
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Header Section with 3-Dot Bar for Mobile -->
   <header>
     <nav>
-      <ul>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">About Us</a></li>
@@ -308,15 +371,18 @@
         <li><a href="#">Contact Us</a></li>
       </ul>
     </nav>
+    
     <a href="#" class="nav-btn">LET'S TALK</a>
+
+    <!-- 3 Dot Premium Bar Icon -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-ellipsis-v"></i>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Full Screen Background Image -->
     <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
-    
-    <!-- Dark Fade Gradient Overlay -->
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
@@ -330,6 +396,9 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
+
+      <!-- Let's Talk Button Placed Below Social Icons -->
+      <a href="#" class="nav-btn mobile-talk-btn">LET'S TALK</a>
     </div>
   </section>
 
@@ -361,7 +430,6 @@
       </div>
     </div>
 
-    <!-- Stats Bar -->
     <div class="stats-container">
       <div class="stat-box">
         <i class="fas fa-users"></i>
@@ -385,6 +453,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Script to handle 3 Dot Menu Click -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
