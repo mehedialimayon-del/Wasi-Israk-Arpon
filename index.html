@@ -42,14 +42,13 @@
       z-index: 1;
     }
 
-    /* Gradient Overlay Desktop */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.5) 55%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 30%, rgba(18, 18, 20, 0.5) 60%, rgba(18, 18, 20, 0) 100%);
       z-index: 2;
     }
 
@@ -58,7 +57,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 30px 8%;
+      padding: 25px 6%;
       position: absolute;
       top: 0;
       left: 0;
@@ -67,39 +66,37 @@
     }
 
     nav {
-      margin-right: 30px;
+      margin-right: 0;
     }
 
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 30px;
+      gap: 20px;
+      align-items: center;
     }
 
     .nav-links li a {
       color: #e0e0e0;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       transition: 0.3s;
       text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
-    .nav-links li a.active, .nav-links li a:hover {
+    .nav-links li a:hover {
       color: #ff5e24;
     }
 
-    .nav-btn {
-      background: #ff5e24;
-      color: #fff;
-      padding: 10px 22px;
+    .nav-btn-highlight {
+      background: #ff5e24 !important;
+      color: #fff !important;
+      padding: 10px 18px;
       border-radius: 4px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 1px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      display: inline-block;
     }
 
     .menu-toggle {
@@ -152,6 +149,7 @@
       margin-bottom: 35px;
     }
 
+    /* New Social Links (WhatsApp, Mail, LinkedIn) */
     .social-links {
       display: flex;
       gap: 15px;
@@ -159,8 +157,8 @@
     }
 
     .social-links a {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(5px);
       border-radius: 50%;
@@ -170,19 +168,22 @@
       color: #fff;
       text-decoration: none;
       transition: 0.3s;
-      font-size: 14px;
+      font-size: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .social-links a:hover {
       background: #ff5e24;
+      transform: translateY(-3px);
     }
 
-    /* Services Section */
-    .services-section {
-      padding: 90px 8%;
+    /* Page Sections (Click Destination) */
+    .page-section {
+      padding: 100px 8%;
       background: #121214;
       position: relative;
       z-index: 3;
+      border-top: 1px solid #1f1f24;
     }
 
     .section-number {
@@ -192,112 +193,55 @@
       margin-bottom: 8px;
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 45px;
-    }
-
     .section-title {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
-    }
-
-    .btn-secondary {
-      background: #1c1c20;
-      color: #8a8a8a;
-      padding: 12px 22px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 50px;
-    }
-
-    .service-card {
-      background: #17171a;
-      padding: 45px 30px;
-      border-radius: 4px;
-    }
-
-    .service-card.highlight {
-      background: #ff5e24;
-    }
-
-    .service-icon {
-      font-size: 30px;
       margin-bottom: 25px;
+    }
+
+    .section-content {
+      color: #a0a0a0;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 800px;
+    }
+
+    .contact-box {
+      background: #17171a;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 16px;
       color: #fff;
     }
 
-    .service-card h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .service-card p {
-      color: #8a8a8a;
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .service-card.highlight p {
-      color: #ffe0d6;
-    }
-
-    .stats-container {
-      background: #17171a;
-      padding: 45px 6%;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      border-radius: 4px;
-      text-align: center;
-    }
-
-    .stat-box i {
+    .contact-item i {
       color: #ff5e24;
       font-size: 20px;
-      margin-bottom: 12px;
     }
 
-    .stat-box h2 {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 5px;
+    .contact-item a {
+      color: #fff;
+      text-decoration: none;
     }
 
-    .stat-box p {
-      color: #6a6a6a;
-      font-size: 12px;
-    }
-
-    /* Mobile Specific Styles */
+    /* Mobile Responsive */
     @media (max-width: 900px) {
       header {
         justify-content: flex-end;
         padding: 20px 6%;
       }
 
-      header .nav-btn {
-        display: none; /* ডেক্সটপ টপ বাটন মোবাইল থেকে হাইড */
-      }
-
       .menu-toggle {
-        display: flex; /* ৩ ডট বার দৃশ্যমান করা */
-      }
-
-      nav {
-        margin-right: 0;
+        display: flex;
       }
 
       .nav-links {
@@ -305,15 +249,16 @@
         position: absolute;
         top: 70px;
         right: 6%;
-        background: rgba(23, 23, 26, 0.95);
+        background: rgba(23, 23, 26, 0.98);
         backdrop-filter: blur(10px);
         flex-direction: column;
-        width: 180px;
+        width: 220px;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         gap: 15px;
         border: 1px solid rgba(255,255,255,0.1);
+        text-align: left;
       }
 
       .nav-links.show {
@@ -328,7 +273,6 @@
         align-items: flex-end;
       }
 
-      /* মুখের উপর থেকে কালো ফেড পুরোপুরি সরিয়ে দেয়া হলো */
       .hero-overlay {
         background: linear-gradient(to top, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.2) 60%, rgba(18, 18, 20, 0) 100%);
       }
@@ -347,40 +291,31 @@
       .social-links {
         justify-content: center;
       }
-
-      .mobile-talk-btn {
-        display: inline-block;
-        margin-top: 10px;
-      }
-
-      .services-grid { grid-template-columns: 1fr; }
-      .stats-container { grid-template-columns: repeat(2, 1fr); gap: 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section with 3-Dot Bar for Mobile -->
+  <!-- Header & Navigation -->
   <header>
     <nav>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="#about">ABOUT ME</a></li>
+        <li><a href="#academic">ACADEMIC</a></li>
+        <li><a href="#education">HIGHER EDUCATION</a></li>
+        <li><a href="#professional">PROFESSIONAL PRACTICE</a></li>
+        <li><a href="#memories">MEMORIES</a></li>
+        <li><a href="#contact" class="nav-btn-highlight">CONTACT-LET'S TALK</a></li>
       </ul>
     </nav>
-    
-    <a href="#" class="nav-btn">LET'S TALK</a>
 
-    <!-- 3 Dot Premium Bar Icon -->
+    <!-- Mobile 3 Dot Menu Icon -->
     <div class="menu-toggle" id="menuToggle">
       <i class="fas fa-ellipsis-v"></i>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Main Section -->
   <section class="hero">
     <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     <div class="hero-overlay"></div>
@@ -390,77 +325,97 @@
       <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
       <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
       
+      <!-- Social Media Buttons -->
       <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
-
-      <!-- Let's Talk Button Placed Below Social Icons -->
-      <a href="#" class="nav-btn mobile-talk-btn">LET'S TALK</a>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services-section">
+  <!-- About Me Section -->
+  <section id="about" class="page-section">
     <div class="section-number">01.</div>
-    <div class="section-header">
-      <h2 class="section-title">Services</h2>
-      <a href="#" class="btn-secondary">VIEW ALL SERVICES</a>
-    </div>
+    <h2 class="section-title">ABOUT ME</h2>
+    <p class="section-content">
+      Welcome to my portfolio! I am Wasi Israk Arpon, a dedicated Business Administrator with a passion for driving strategic growth, optimizing operational management, and delivering effective business solutions.
+    </p>
+  </section>
 
-    <div class="services-grid">
-      <div class="service-card highlight">
-        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Business Strategy</h3>
-        <p>Aenean non accumsan ante. Duis et risus accumsan sem tempus porta nec sit amet estsed ut euismod.</p>
-      </div>
+  <!-- Academic Section -->
+  <section id="academic" class="page-section">
+    <div class="section-number">02.</div>
+    <h2 class="section-title">ACADEMIC</h2>
+    <p class="section-content">
+      Details about my educational foundation, school & college qualifications, and academic achievements.
+    </p>
+  </section>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-        <h3>Digital Marketing</h3>
-        <p>Vivamus luctus maximus vestibulum. Donec et enim vitae tellus auctor meanean leo diamfeugiat nulla sed.</p>
-      </div>
+  <!-- Higher Education Section -->
+  <section id="education" class="page-section">
+    <div class="section-number">03.</div>
+    <h2 class="section-title">HIGHER EDUCATION</h2>
+    <p class="section-content">
+      Information regarding my university degree, specialized courses in Business Administration, and certifications.
+    </p>
+  </section>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-tasks"></i></div>
-        <h3>Operations Management</h3>
-        <p>Praesent commodo pharetra. Fusce fermentum anteac met interdum elementum arculectus lacinia nonsa.</p>
-      </div>
-    </div>
+  <!-- Professional Practice Section -->
+  <section id="professional" class="page-section">
+    <div class="section-number">04.</div>
+    <h2 class="section-title">PROFESSIONAL PRACTICE</h2>
+    <p class="section-content">
+      My corporate experience, business strategy projects, digital operations management, and portfolio of commercial deals.
+    </p>
+  </section>
 
-    <div class="stats-container">
-      <div class="stat-box">
-        <i class="fas fa-users"></i>
-        <h2>459 K</h2>
-        <p>Subscribers</p>
+  <!-- Memories Section -->
+  <section id="memories" class="page-section">
+    <div class="section-number">05.</div>
+    <h2 class="section-title">MEMORIES</h2>
+    <p class="section-content">
+      Highlights, career milestones, achievements, and photos from major events and projects.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="page-section">
+    <div class="section-number">06.</div>
+    <h2 class="section-title">CONTACT - LET'S TALK</h2>
+    <p class="section-content">Feel free to reach out to me via any of the direct contact details below:</p>
+    
+    <div class="contact-box">
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp: <a href="https://wa.me/60149382719" target="_blank">+60149382719</a></span>
       </div>
-      <div class="stat-box">
-        <i class="fas fa-briefcase"></i>
-        <h2>300 +</h2>
-        <p>Projects</p>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>Email: <a href="mailto:wasiarpon@gmail.com">wasiarpon@gmail.com</a></span>
       </div>
-      <div class="stat-box">
-        <i class="fas fa-award"></i>
-        <h2>400</h2>
-        <p>Successful Deals</p>
-      </div>
-      <div class="stat-box">
-        <i class="fas fa-bullseye"></i>
-        <h2>200</h2>
-        <p>Commercials</p>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">Wasi Arpon Profile</a></span>
       </div>
     </div>
   </section>
 
-  <!-- Script to handle 3 Dot Menu Click -->
+  <!-- JavaScript for Navigation & Menu Toggle -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
+    // Mobile Menu Toggle
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
+    });
+
+    // Close mobile menu when clicking any link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
     });
   </script>
 
