@@ -18,10 +18,10 @@
       height: 100%;
       background-color: #121214;
       color: #ffffff;
-      overflow: hidden; /* নো স্ক্রোলিং */
+      overflow: hidden;
     }
 
-    /* Main Hero Screen */
+    /* Hero Container */
     .hero {
       position: fixed;
       top: 0;
@@ -35,7 +35,7 @@
       z-index: 1;
     }
 
-    /* ব্যাকগ্রাউন্ড পিকচার ফিক্স: মাথা যেন কেটে না যায় */
+    /* Background Image Positioning */
     .hero-bg-image {
       position: absolute;
       top: 0;
@@ -43,43 +43,44 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 15%; /* মাথা স্পষ্টভাবে দেখানোর জন্য এডজাস্টমেন্ট */
+      object-position: center top; /* ডেস্কটপে মাথা পারফেক্ট দেখাবে */
       z-index: 1;
     }
 
+    /* Soft Gradient Overlay */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 35%, rgba(18, 18, 20, 0.4) 65%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.85) 30%, rgba(18, 18, 20, 0.2) 65%, rgba(18, 18, 20, 0) 100%);
       z-index: 2;
     }
 
-    /* Top Navigation Bar Fixes */
+    /* Navigation Bar */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 5%;
+      padding: 20px 6%;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 100;
-      background: linear-gradient(to bottom, rgba(18, 18, 20, 0.85) 0%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
+    /* WIA Logo Styling */
     .brand-logo {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
-      margin-right: 20px;
     }
 
     .brand-logo span {
@@ -91,13 +92,11 @@
       align-items: center;
     }
 
-    /* ডেস্কটপ বাটন ওভারল্যাপ ফিক্স */
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 15px;
+      gap: 20px;
       align-items: center;
-      flex-wrap: nowrap;
     }
 
     .nav-links li {
@@ -105,15 +104,15 @@
     }
 
     .nav-links li a {
-      color: #e0e0e0;
+      color: #ffffff;
       text-decoration: none;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       transition: 0.3s;
       cursor: pointer;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     .nav-links li a:hover {
@@ -123,9 +122,9 @@
     .nav-btn-highlight {
       background: #ff5e24 !important;
       color: #fff !important;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(255, 94, 36, 0.3);
+      box-shadow: 0 4px 12px rgba(255, 94, 36, 0.3);
       display: inline-block;
     }
 
@@ -144,12 +143,12 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Hero Text Content Area */
+    /* Hero Text Content */
     .hero-content {
       width: 50%;
       z-index: 3;
       position: relative;
-      margin-top: 50px;
+      margin-top: 40px;
     }
 
     .hero-subtitle {
@@ -158,38 +157,37 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .hero-title {
-      font-size: 52px;
+      font-size: 50px;
       font-weight: 800;
       line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       letter-spacing: -1px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
 
     .hero-desc {
-      color: #cccccc;
+      color: #dddddd;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     /* Social Link Icons */
     .social-links {
       display: flex;
       gap: 15px;
-      margin-bottom: 25px;
     }
 
     .social-links a {
-      width: 42px;
-      height: 42px;
-      background: rgba(255, 255, 255, 0.12);
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(5px);
       border-radius: 50%;
       display: flex;
@@ -198,8 +196,8 @@
       color: #fff;
       text-decoration: none;
       transition: 0.3s;
-      font-size: 17px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .social-links a:hover {
@@ -208,7 +206,7 @@
       border-color: #ff5e24;
     }
 
-    /* Separate Pages View Overlay */
+    /* Page Overlay Views */
     .page-view {
       position: fixed;
       top: 0;
@@ -308,25 +306,23 @@
       text-decoration: none;
     }
 
-    /* Mobile view specific overrides */
+    /* Mobile Responsive View Fixes */
     @media (max-width: 992px) {
       header {
         padding: 15px 5%;
-        justify-content: space-between;
-        background: linear-gradient(to bottom, rgba(18, 18, 20, 0.9) 0%, rgba(18, 18, 20, 0) 100%);
+        background: transparent;
       }
 
+      /* WIA Logo বামেই থাকবে */
       .brand-logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-right: 0;
-        font-size: 13px;
+        position: relative;
+        left: 0;
+        transform: none;
+        font-size: 22px;
       }
 
       .menu-toggle {
         display: flex;
-        margin-left: auto;
       }
 
       .nav-links {
@@ -337,10 +333,10 @@
         background: rgba(23, 23, 26, 0.98);
         backdrop-filter: blur(15px);
         flex-direction: column;
-        width: 230px;
+        width: 220px;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         gap: 15px;
         border: 1px solid rgba(255,255,255,0.1);
         text-align: left;
@@ -351,37 +347,56 @@
       }
 
       .hero {
-        padding-top: 80px;
-        padding-bottom: 30px;
+        padding-top: 0;
+        padding-bottom: 25px;
         align-items: flex-end;
       }
 
-      /* মোবাইল ভিউয়ে ছবি নিচে নামানো যাতে মাথা ব্লার বা বার দিয়ে না ঢাকে */
+      /* মোবাইল ভিউয়ে ফেস স্পষ্ট করার জন্য ছবির পজিশন */
       .hero-bg-image {
-        object-position: center 30%;
+        object-position: center 20%;
       }
 
+      /* নিচের ডার্ক সেড কমানো হলো যেন জুতা দেখা যায় */
       .hero-overlay {
-        background: linear-gradient(to top, rgba(18, 18, 20, 0.96) 35%, rgba(18, 18, 20, 0.1) 70%, rgba(18, 18, 20, 0) 100%);
+        background: linear-gradient(to top, rgba(18, 18, 20, 0.75) 25%, rgba(18, 18, 20, 0.05) 55%, rgba(18, 18, 20, 0) 100%);
       }
 
       .hero-content {
         width: 100%;
         text-align: center;
         margin-top: 0;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
+      }
+
+      .hero-subtitle {
+        font-size: 11px;
+        margin-bottom: 6px;
       }
 
       .hero-title {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .hero-desc {
+        font-size: 10px;
+        margin-bottom: 15px;
       }
 
       .social-links {
         justify-content: center;
+        gap: 12px;
+      }
+
+      .social-links a {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
       }
 
       .page-view {
-        padding: 100px 6% 30px 6%;
+        padding: 90px 6% 30px 6%;
         justify-content: flex-start;
       }
 
@@ -395,7 +410,8 @@
 
   <!-- Top Navigation Bar -->
   <header>
-    <a href="#" class="brand-logo" onclick="closePages()">WASI ISRAK <span>ARPON</span></a>
+    <!-- Logo (WI A) -->
+    <a href="#" class="brand-logo" onclick="closePages()">WI<span>A</span></a>
 
     <nav>
       <ul class="nav-links" id="navLinks">
@@ -408,13 +424,13 @@
       </ul>
     </nav>
 
-    <!-- Mobile 3-Dot Bar Menu -->
+    <!-- Mobile 3-Dot Menu Button -->
     <div class="menu-toggle" id="menuToggle">
       <i class="fas fa-ellipsis-v"></i>
     </div>
   </header>
 
-  <!-- Fixed Hero Main Screen -->
+  <!-- Hero Main Screen -->
   <section class="hero">
     <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     <div class="hero-overlay"></div>
@@ -424,7 +440,7 @@
       <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
       <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
       
-      <!-- Social Media Buttons -->
+      <!-- Social Buttons -->
       <div class="social-links">
         <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -433,13 +449,13 @@
     </div>
   </section>
 
-  <!-- Separate Page View Modals -->
+  <!-- Page View Overlays -->
   <div id="page-about" class="page-view">
     <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
     <div class="page-number">01.</div>
     <h1 class="page-title">ABOUT ME</h1>
     <div class="page-content">
-      <p>Welcome! I am Wasi Israk Arpon, a dedicated Business Administrator with a strong foundation in management, strategic analysis, and commercial leadership. I specialize in optimizing organizational efficiency, driving business growth, and managing complex commercial deals.</p>
+      <p>Welcome! I am Wasi Israk Arpon, a dedicated Business Administrator with a strong foundation in management, strategic analysis, and commercial leadership.</p>
     </div>
   </div>
 
@@ -503,7 +519,6 @@
     </div>
   </div>
 
-  <!-- JavaScript Navigation Logic -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
