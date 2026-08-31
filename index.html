@@ -30,7 +30,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 0 6%;
+      padding: 0 5%;
       overflow: hidden;
       z-index: 1;
     }
@@ -42,19 +42,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* ডেক্সটপে পুরো ছবি রেখে মানুষটিকে বামে সরানোর জন্য */
-      object-position: 20% 0%;
+      /* মানুষটিকে একদম বামের ফাঁকা জায়গার মাঝবরাবর পজিশন করা হলো */
+      object-position: 8% 0%;
       z-index: 1;
     }
 
-    /* শেড বা গ্রেডিয়েন্ট কমিয়ে হালকা করা হয়েছে যাতে ব্যাকগ্রাউন্ড পরিষ্কার ও সুন্দর লাগে */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.4) 30%, rgba(18, 18, 20, 0.75) 65%, rgba(18, 18, 20, 0.85) 100%);
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.25) 25%, rgba(18, 18, 20, 0.7) 60%, rgba(18, 18, 20, 0.82) 100%);
       z-index: 2;
     }
 
@@ -71,7 +70,6 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
-    /* W (Black) - I (Orange) - A (Black) Logo */
     .brand-logo {
       font-size: 18px;
       font-weight: 900;
@@ -92,7 +90,7 @@
     }
 
     .hero-right-container {
-      width: 42%;
+      width: 45%;
       z-index: 3;
       position: relative;
       display: flex;
@@ -110,7 +108,7 @@
     }
 
     .hero-title {
-      font-size: 42px;
+      font-size: 40px;
       font-weight: 800;
       line-height: 1.05;
       margin-bottom: 10px;
@@ -127,11 +125,10 @@
       margin-bottom: 15px;
     }
 
-    /* সোশ্যাল মিডিয়া আইকনসমূহ */
     .social-links {
       display: flex;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .social-links a {
@@ -156,7 +153,7 @@
       border-color: #ff5e24;
     }
 
-    /* ৬টি বাটন (উপরে ৩টি, নিচে ৩টি - সমান মাপের গ্রিড) */
+    /* ৬টি বাটন গ্রিড */
     .home-menu-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -168,7 +165,7 @@
       background: rgba(25, 25, 30, 0.75);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 12px 10px;
+      padding: 11px 10px;
       border-radius: 6px;
       color: #ffffff;
       text-decoration: none;
@@ -202,7 +199,6 @@
       transition: 0.3s;
     }
 
-    /* ক্লিক করলে হাইলাইট ইফেক্ট এবং হোভার */
     .menu-card:hover, .menu-card.active-highlight {
       background: #ff5e24;
       border-color: #ff5e24;
@@ -322,7 +318,7 @@
       text-decoration: none;
     }
 
-    /* মোবাইল ও ছোট স্ক্রিনের জন্য রেসপন্সিভ ডিজাইন (সবকিছু স্ক্রিনের মাঝে পারফেক্ট থাকবে) */
+    /* মোবাইল ভিউ */
     @media (max-width: 950px) {
       .hero {
         justify-content: center;
@@ -354,7 +350,7 @@
       }
 
       .home-menu-grid {
-        grid-template-columns: repeat(2, 1fr); /* মোবাইলে ২ কলাম করে সুন্দরভাবে মাঝখানে দেখাবে */
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
       }
 
