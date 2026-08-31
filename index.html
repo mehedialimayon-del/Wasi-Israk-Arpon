@@ -19,12 +19,24 @@
       overflow-x: hidden;
     }
 
-    /* Navbar Layer */
+    /* Hero Section - Fixed Full Screen Viewport */
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      background-color: #121214;
+      overflow: hidden;
+    }
+
+    /* Header Layer */
     header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 30px 6%;
+      padding: 30px 8%;
       position: absolute;
       top: 0;
       left: 0;
@@ -67,23 +79,12 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* Hero Section Setup */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      padding: 0 6%;
-      background-color: #121214;
-      overflow: hidden;
-    }
-
+    /* Left Text Content */
     .hero-content {
       width: 45%;
       z-index: 3;
       position: relative;
+      margin-top: 40px;
     }
 
     .hero-subtitle {
@@ -112,7 +113,6 @@
       margin-bottom: 35px;
     }
 
-    /* Social Icons */
     .social-links {
       display: flex;
       gap: 15px;
@@ -137,12 +137,12 @@
       background: #ff5e24;
     }
 
-    /* Fixed Image Container to fit full body correctly */
+    /* Right Side Image Setup - Head to Body Fit Focus */
     .hero-image-container {
       position: absolute;
       top: 0;
       right: 0;
-      width: 65%;
+      width: 60%;
       height: 100%;
       z-index: 1;
     }
@@ -150,25 +150,25 @@
     .hero-image {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* ছবি যেন কেটে না যায় এবং সুন্দরভাবে ফিট হয় */
-      object-position: right center; /* ছবি ডানে ও সেন্টারে ফিট থাকবে */
+      object-fit: cover; /* পুরো স্ক্রিন কভার করবে */
+      object-position: top center; /* ছবিটিকে উপর (মাথা) থেকে ফোকাস রেখে নিচের দিকে ক্রপ করবে */
       opacity: 0.9;
     }
 
-    /* Left Side Fade Overlay for Text Readability */
+    /* Smooth Gradient Fade for Left Side Text */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, #121214 30%, rgba(18, 18, 20, 0.7) 50%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to right, #121214 35%, rgba(18, 18, 20, 0.6) 55%, rgba(18, 18, 20, 0) 100%);
       z-index: 2;
     }
 
     /* Services Section */
     .services-section {
-      padding: 90px 6%;
+      padding: 90px 8%;
       background: #121214;
       position: relative;
       z-index: 3;
@@ -271,7 +271,7 @@
       font-size: 12px;
     }
 
-    /* Mobile Responsive */
+    /* Mobile Responsive View */
     @media (max-width: 900px) {
       header {
         justify-content: center;
@@ -283,22 +283,23 @@
       .hero {
         flex-direction: column;
         height: auto;
-        padding-top: 150px;
-        padding-bottom: 50px;
+        padding-top: 140px;
+        padding-bottom: 40px;
       }
       .hero-content {
         width: 100%;
         text-align: center;
+        margin-top: 0;
       }
-      .hero-title { font-size: 40px; }
+      .hero-title { font-size: 38px; }
       .hero-image-container {
         position: relative;
         width: 100%;
-        height: 380px;
-        margin-top: 30px;
+        height: 420px;
+        margin-top: 20px;
       }
       .hero-image {
-        object-position: center;
+        object-position: top center;
       }
       .hero-overlay {
         background: linear-gradient(to bottom, #121214 20%, rgba(18, 18, 20, 0.4) 60%, rgba(18, 18, 20, 0) 100%);
@@ -311,7 +312,7 @@
 </head>
 <body>
 
-  <!-- Top Header Navigation -->
+  <!-- Top Navigation Bar -->
   <header>
     <nav>
       <ul>
@@ -325,7 +326,7 @@
     <a href="#" class="nav-btn">LET'S TALK</a>
   </header>
 
-  <!-- Hero Banner -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay"></div>
 
@@ -342,6 +343,7 @@
       </div>
     </div>
 
+    <!-- Right Image aligned from top head -->
     <div class="hero-image-container">
       <img class="hero-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     </div>
