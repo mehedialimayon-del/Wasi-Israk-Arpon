@@ -21,7 +21,6 @@
       overflow: hidden;
     }
 
-    /* Hero Container */
     .hero {
       position: fixed;
       top: 0;
@@ -35,7 +34,6 @@
       z-index: 1;
     }
 
-    /* Background Image Positioning */
     .hero-bg-image {
       position: absolute;
       top: 0;
@@ -43,27 +41,26 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top; /* ডেস্কটপে মাথা পারফেক্ট দেখাবে */
+      object-position: center top;
       z-index: 1;
     }
 
-    /* Soft Gradient Overlay */
+    /* প্রিমিয়াম ব্ল্যাক গ্রাডিয়েন্ট শেড */
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.85) 30%, rgba(18, 18, 20, 0.2) 65%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to right, rgba(10, 10, 12, 0.9) 35%, rgba(10, 10, 12, 0.3) 65%, rgba(10, 10, 12, 0) 100%);
       z-index: 2;
     }
 
-    /* Navigation Bar */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 6%;
+      padding: 18px 6%;
       position: fixed;
       top: 0;
       left: 0;
@@ -72,18 +69,22 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
-    /* WIA Logo Styling */
+    /* W (Black) - I (Orange) - A (Black) Logo */
     .brand-logo {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 900;
-      letter-spacing: 2px;
-      color: #ffffff;
+      letter-spacing: 1px;
+      color: #000000;
       text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(5px);
     }
 
-    .brand-logo span {
+    .brand-logo .i-orange {
       color: #ff5e24;
     }
 
@@ -122,7 +123,7 @@
     .nav-btn-highlight {
       background: #ff5e24 !important;
       color: #fff !important;
-      padding: 9px 16px;
+      padding: 8px 15px;
       border-radius: 4px;
       box-shadow: 0 4px 12px rgba(255, 94, 36, 0.3);
       display: inline-block;
@@ -130,12 +131,12 @@
 
     .menu-toggle {
       display: none;
-      font-size: 18px;
+      font-size: 16px;
       color: #fff;
       cursor: pointer;
-      background: rgba(0, 0, 0, 0.4);
-      width: 38px;
-      height: 38px;
+      background: rgba(0, 0, 0, 0.5);
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
@@ -143,7 +144,6 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Hero Text Content */
     .hero-content {
       width: 50%;
       z-index: 3;
@@ -153,7 +153,7 @@
 
     .hero-subtitle {
       color: #ff5e24;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -161,24 +161,23 @@
     }
 
     .hero-title {
-      font-size: 50px;
+      font-size: 48px;
       font-weight: 800;
       line-height: 1.05;
       margin-bottom: 15px;
       letter-spacing: -1px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .hero-desc {
       color: #dddddd;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 25px;
     }
 
-    /* Social Link Icons */
     .social-links {
       display: flex;
       gap: 15px;
@@ -187,7 +186,7 @@
     .social-links a {
       width: 40px;
       height: 40px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(5px);
       border-radius: 50%;
       display: flex;
@@ -206,7 +205,6 @@
       border-color: #ff5e24;
     }
 
-    /* Page Overlay Views */
     .page-view {
       position: fixed;
       top: 0;
@@ -306,19 +304,17 @@
       text-decoration: none;
     }
 
-    /* Mobile Responsive View Fixes */
+    /* Mobile Adaptations */
     @media (max-width: 992px) {
       header {
         padding: 15px 5%;
         background: transparent;
       }
 
-      /* WIA Logo বামেই থাকবে */
       .brand-logo {
         position: relative;
         left: 0;
-        transform: none;
-        font-size: 22px;
+        font-size: 16px;
       }
 
       .menu-toggle {
@@ -348,25 +344,23 @@
 
       .hero {
         padding-top: 0;
-        padding-bottom: 25px;
+        padding-bottom: 45px; /* সোশ্যাল আইকন স্ক্রিনের ভেতরে আনার জন্য পজিশনিং */
         align-items: flex-end;
       }
 
-      /* মোবাইল ভিউয়ে ফেস স্পষ্ট করার জন্য ছবির পজিশন */
       .hero-bg-image {
-        object-position: center 20%;
+        object-position: center 10%;
       }
 
-      /* নিচের ডার্ক সেড কমানো হলো যেন জুতা দেখা যায় */
+      /* গাঢ় প্রিমিয়াম শেড জুতার ওপর দেওয়া হলো */
       .hero-overlay {
-        background: linear-gradient(to top, rgba(18, 18, 20, 0.75) 25%, rgba(18, 18, 20, 0.05) 55%, rgba(18, 18, 20, 0) 100%);
+        background: linear-gradient(to top, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 60%, rgba(10, 10, 12, 0) 100%);
       }
 
       .hero-content {
         width: 100%;
         text-align: center;
         margin-top: 0;
-        padding-bottom: 5px;
       }
 
       .hero-subtitle {
@@ -381,18 +375,18 @@
 
       .hero-desc {
         font-size: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
       }
 
       .social-links {
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
       }
 
       .social-links a {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
       }
 
       .page-view {
@@ -408,10 +402,9 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <header>
-    <!-- Logo (WI A) -->
-    <a href="#" class="brand-logo" onclick="closePages()">WI<span>A</span></a>
+    <!-- Logo W (Black) - I (Orange) - A (Black) -->
+    <a href="#" class="brand-logo" onclick="closePages()">W<span class="i-orange">I</span>A</a>
 
     <nav>
       <ul class="nav-links" id="navLinks">
@@ -424,13 +417,11 @@
       </ul>
     </nav>
 
-    <!-- Mobile 3-Dot Menu Button -->
     <div class="menu-toggle" id="menuToggle">
       <i class="fas fa-ellipsis-v"></i>
     </div>
   </header>
 
-  <!-- Hero Main Screen -->
   <section class="hero">
     <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     <div class="hero-overlay"></div>
@@ -440,7 +431,6 @@
       <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
       <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
       
-      <!-- Social Buttons -->
       <div class="social-links">
         <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -449,7 +439,6 @@
     </div>
   </section>
 
-  <!-- Page View Overlays -->
   <div id="page-about" class="page-view">
     <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
     <div class="page-number">01.</div>
