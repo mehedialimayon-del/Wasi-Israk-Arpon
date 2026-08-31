@@ -19,28 +19,15 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section with Fullscreen Background Image */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 30px 8% 60px;
-      /* Background Image Setup */
-      background-image: linear-gradient(to right, rgba(18, 18, 20, 0.95) 20%, rgba(18, 18, 20, 0.4) 60%, rgba(18, 18, 20, 0.1) 100%), 
-                        url('https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg');
-      background-size: cover;
-      background-position: center right;
-      background-repeat: no-repeat;
-    }
-
-    /* Top Navigation inside the Image Hero */
+    /* Navbar Layer */
     header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      padding: 30px 6%;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       z-index: 10;
     }
@@ -56,11 +43,12 @@
     }
 
     nav ul li a {
-      color: #b0b0b0;
+      color: #e0e0e0;
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
       transition: 0.3s;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     nav ul li a.active, nav ul li a:hover {
@@ -76,19 +64,31 @@
       font-weight: 700;
       font-size: 11px;
       letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* Hero Main Content */
+    /* Hero Section Setup */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      padding: 0 6%;
+      background-color: #121214;
+      overflow: hidden;
+    }
+
     .hero-content {
-      max-width: 500px;
-      margin-top: auto;
-      margin-bottom: auto;
-      z-index: 2;
+      width: 45%;
+      z-index: 3;
+      position: relative;
     }
 
     .hero-subtitle {
       color: #ff5e24;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -112,7 +112,7 @@
       margin-bottom: 35px;
     }
 
-    /* Social Icons inside Image */
+    /* Social Icons */
     .social-links {
       display: flex;
       gap: 15px;
@@ -121,7 +121,7 @@
     .social-links a {
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(5px);
       border-radius: 50%;
       display: flex;
@@ -137,10 +137,41 @@
       background: #ff5e24;
     }
 
+    /* Fixed Image Container to fit full body correctly */
+    .hero-image-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 65%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ছবি যেন কেটে না যায় এবং সুন্দরভাবে ফিট হয় */
+      object-position: right center; /* ছবি ডানে ও সেন্টারে ফিট থাকবে */
+      opacity: 0.9;
+    }
+
+    /* Left Side Fade Overlay for Text Readability */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #121214 30%, rgba(18, 18, 20, 0.7) 50%, rgba(18, 18, 20, 0) 100%);
+      z-index: 2;
+    }
+
     /* Services Section */
     .services-section {
-      padding: 90px 8%;
+      padding: 90px 6%;
       background: #121214;
+      position: relative;
+      z-index: 3;
     }
 
     .section-number {
@@ -240,25 +271,38 @@
       font-size: 12px;
     }
 
-    /* Responsive adjustments */
+    /* Mobile Responsive */
     @media (max-width: 900px) {
-      .hero {
-        background-image: linear-gradient(to bottom, rgba(18, 18, 20, 0.85) 40%, rgba(18, 18, 20, 0.95) 100%), 
-                          url('https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg');
-        background-position: center;
-        padding-top: 20px;
-      }
       header {
         justify-content: center;
         flex-direction: column;
         gap: 15px;
+        padding-top: 20px;
       }
       nav { margin-right: 0; }
+      .hero {
+        flex-direction: column;
+        height: auto;
+        padding-top: 150px;
+        padding-bottom: 50px;
+      }
       .hero-content {
-        max-width: 100%;
+        width: 100%;
         text-align: center;
       }
       .hero-title { font-size: 40px; }
+      .hero-image-container {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        margin-top: 30px;
+      }
+      .hero-image {
+        object-position: center;
+      }
+      .hero-overlay {
+        background: linear-gradient(to bottom, #121214 20%, rgba(18, 18, 20, 0.4) 60%, rgba(18, 18, 20, 0) 100%);
+      }
       .social-links { justify-content: center; }
       .services-grid { grid-template-columns: 1fr; }
       .stats-container { grid-template-columns: repeat(2, 1fr); gap: 30px; }
@@ -267,30 +311,29 @@
 </head>
 <body>
 
-  <!-- Main Hero Banner Section with Photo Background -->
-  <section class="hero">
-    
-    <!-- Header Navigation Bar inside Hero Image -->
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="nav-btn">LET'S TALK</a>
-    </header>
+  <!-- Top Header Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="nav-btn">LET'S TALK</a>
+  </header>
 
-    <!-- Main Text & Buttons overlay on Top of Image -->
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
       <div class="hero-subtitle">HELLO, MY NAME IS</div>
       <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
       <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
       
-      <!-- Social Buttons inside Hero Image -->
       <div class="social-links">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -299,7 +342,9 @@
       </div>
     </div>
 
-    <div></div> <!-- Layout balancing spacer -->
+    <div class="hero-image-container">
+      <img class="hero-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
+    </div>
   </section>
 
   <!-- Services Section -->
