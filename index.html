@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@
     /* Navbar */
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end; /* Logo সরাতে ডানদিকের উপাদানগুলোকে ডানে পাঠাতে */
       align-items: center;
       padding: 25px 8%;
       background: transparent;
@@ -32,10 +31,8 @@
       z-index: 10;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    nav {
+      margin-right: 30px;
     }
 
     nav ul {
@@ -243,6 +240,14 @@
 
     /* Responsive */
     @media (max-width: 900px) {
+      header {
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav {
+        margin-right: 0;
+      }
       .hero {
         flex-direction: column;
         justify-content: center;
@@ -250,7 +255,7 @@
       }
       .hero-content {
         max-width: 100%;
-        margin-top: 80px;
+        margin-top: 100px;
       }
       .hero-image {
         position: relative;
@@ -266,9 +271,8 @@
 </head>
 <body>
 
-  <!-- Header / Navbar -->
+  <!-- Header / Navbar (Logo Removed) -->
   <header>
-    <div class="logo">Persona</div>
     <nav>
       <ul>
         <li><a href="#" class="active">Home</a></li>
@@ -306,7 +310,7 @@
     </div>
 
     <div class="services-grid">
-      <!-- Card 1 (Highlighted) -->
+      <!-- Card 1 -->
       <div class="service-card highlight">
         <div class="service-icon"><i class="fas fa-chart-line"></i></div>
         <h3>Business Strategy</h3>
