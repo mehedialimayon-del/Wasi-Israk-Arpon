@@ -82,6 +82,7 @@
       padding: 4px 10px;
       border-radius: 4px;
       backdrop-filter: blur(5px);
+      cursor: pointer;
     }
 
     .brand-logo .i-orange {
@@ -344,7 +345,7 @@
 
       .hero {
         padding-top: 0;
-        padding-bottom: 45px; /* সোশ্যাল আইকন স্ক্রিনের ভেতরে আনার জন্য পজিশনিং */
+        padding-bottom: 45px;
         align-items: flex-end;
       }
 
@@ -352,7 +353,6 @@
         object-position: center 10%;
       }
 
-      /* গাঢ় প্রিমিয়াম শেড জুতার ওপর দেওয়া হলো */
       .hero-overlay {
         background: linear-gradient(to top, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 60%, rgba(10, 10, 12, 0) 100%);
       }
@@ -403,8 +403,8 @@
 <body>
 
   <header>
-    <!-- Logo W (Black) - I (Orange) - A (Black) -->
-    <a href="#" class="brand-logo" onclick="closePages()">W<span class="i-orange">I</span>A</a>
+    <!-- Logo Click Refresh -->
+    <a href="#" class="brand-logo" onclick="window.location.reload(); return false;">W<span class="i-orange">I</span>A</a>
 
     <nav>
       <ul class="nav-links" id="navLinks">
