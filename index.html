@@ -41,7 +41,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      /* ডেক্সটপ ভিউতে ছবির মাথা নিচে নামানোর জন্য পজিশন এডজাস্ট করা হয়েছে */
+      object-position: center 25%;
       z-index: 1;
     }
 
@@ -344,23 +345,26 @@
       }
 
       .hero {
-        padding-top: 0;
-        padding-bottom: 45px;
+        padding-top: 50px;
+        /* মোবাইল ভিউতে আইকনগুলো যাতে স্ক্রিনের একদম ভেতরে থাকে এবং কেটে না যায় */
+        padding-bottom: 25px; 
         align-items: flex-end;
       }
 
       .hero-bg-image {
-        object-position: center 10%;
+        object-position: center 15%;
       }
 
       .hero-overlay {
-        background: linear-gradient(to top, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 60%, rgba(10, 10, 12, 0) 100%);
+        background: linear-gradient(to top, rgba(10, 10, 12, 0.95) 25%, rgba(10, 10, 12, 0.4) 55%, rgba(10, 10, 12, 0) 100%);
       }
 
       .hero-content {
         width: 100%;
         text-align: center;
         margin-top: 0;
+        /* মোবাইল ভিউতে কন্টেন্ট ও আইকন একটু উপরে রাখার জন্য */
+        margin-bottom: 10px; 
       }
 
       .hero-subtitle {
@@ -369,24 +373,24 @@
       }
 
       .hero-title {
-        font-size: 28px;
-        margin-bottom: 8px;
+        font-size: 26px;
+        margin-bottom: 6px;
       }
 
       .hero-desc {
         font-size: 10px;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
       }
 
       .social-links {
         justify-content: center;
-        gap: 14px;
+        gap: 12px;
       }
 
       .social-links a {
-        width: 38px;
-        height: 38px;
-        font-size: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
       }
 
       .page-view {
