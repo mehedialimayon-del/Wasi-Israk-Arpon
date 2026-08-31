@@ -13,22 +13,26 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    body {
+    body, html {
+      width: 100%;
+      height: 100%;
       background-color: #121214;
       color: #ffffff;
-      overflow-x: hidden;
+      overflow: hidden; /* স্ক্রোলিং বন্ধ রাখা হয়েছে */
     }
 
-    /* Hero Section Setup */
+    /* Hero Fixed Background Setup */
     .hero {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      min-height: 600px;
       display: flex;
       align-items: center;
       padding: 0 8%;
       overflow: hidden;
+      z-index: 1;
     }
 
     .hero-bg-image {
@@ -48,25 +52,41 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 30%, rgba(18, 18, 20, 0.5) 60%, rgba(18, 18, 20, 0) 100%);
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 30%, rgba(18, 18, 20, 0.45) 65%, rgba(18, 18, 20, 0) 100%);
       z-index: 2;
     }
 
-    /* Header & Navigation */
+    /* Top Premium Header Bar */
     header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      padding: 25px 6%;
-      position: absolute;
+      padding: 20px 6%;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 10;
+      z-index: 100;
+      background: rgba(18, 18, 20, 0.4);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    nav {
-      margin-right: 0;
+    /* Header Logo Title */
+    .brand-logo {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .brand-logo span {
+      color: #ff5e24;
     }
 
     .nav-links {
@@ -79,12 +99,12 @@
     .nav-links li a {
       color: #e0e0e0;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       transition: 0.3s;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      cursor: pointer;
     }
 
     .nav-links li a:hover {
@@ -96,30 +116,35 @@
       color: #fff !important;
       padding: 10px 18px;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(255, 94, 36, 0.3);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 22px;
+      font-size: 18px;
       color: #fff;
       cursor: pointer;
-      background: rgba(0, 0, 0, 0.5);
-      width: 42px;
-      height: 42px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: 0.3s;
     }
 
-    /* Content Styling */
+    .menu-toggle:hover {
+      background: #ff5e24;
+    }
+
+    /* Home Hero Content Area */
     .hero-content {
       width: 50%;
       z-index: 3;
       position: relative;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     .hero-subtitle {
@@ -132,7 +157,7 @@
     }
 
     .hero-title {
-      font-size: 58px;
+      font-size: 56px;
       font-weight: 800;
       line-height: 1.05;
       margin-bottom: 20px;
@@ -149,7 +174,7 @@
       margin-bottom: 35px;
     }
 
-    /* New Social Links (WhatsApp, Mail, LinkedIn) */
+    /* Social Icons (WhatsApp, Email, LinkedIn) */
     .social-links {
       display: flex;
       gap: 15px;
@@ -159,7 +184,7 @@
     .social-links a {
       width: 45px;
       height: 45px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
       border-radius: 50%;
       display: flex;
@@ -175,32 +200,76 @@
     .social-links a:hover {
       background: #ff5e24;
       transform: translateY(-3px);
+      border-color: #ff5e24;
     }
 
-    /* Page Sections (Click Destination) */
-    .page-section {
-      padding: 100px 8%;
-      background: #121214;
-      position: relative;
-      z-index: 3;
-      border-top: 1px solid #1f1f24;
+    /* Separate Full Screen Pages */
+    .page-view {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 18, 20, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+      transform: translateY(20px);
+      overflow-y: auto;
     }
 
-    .section-number {
+    .page-view.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 30px;
+      left: 6%;
+      color: #ff5e24;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 94, 36, 0.1);
+      padding: 10px 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 94, 36, 0.3);
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ff5e24;
+      color: #fff;
+    }
+
+    .page-number {
       color: #ff5e24;
       font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 8px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
 
-    .section-title {
-      font-size: 36px;
+    .page-title {
+      font-size: 42px;
       font-weight: 800;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
-    .section-content {
-      color: #a0a0a0;
+    .page-content {
+      color: #b0b0b0;
       font-size: 15px;
       line-height: 1.8;
       max-width: 800px;
@@ -210,8 +279,9 @@
       background: #17171a;
       padding: 30px;
       border-radius: 8px;
-      margin-top: 20px;
+      margin-top: 25px;
       display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .contact-item {
@@ -219,13 +289,13 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 15px;
-      font-size: 16px;
+      font-size: 15px;
       color: #fff;
     }
 
     .contact-item i {
       color: #ff5e24;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .contact-item a {
@@ -233,29 +303,42 @@
       text-decoration: none;
     }
 
-    /* Mobile Responsive */
+    /* Mobile Responsive View Styling */
     @media (max-width: 900px) {
       header {
-        justify-content: flex-end;
-        padding: 20px 6%;
+        padding: 15px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* সেন্টারে নামটি রাখার জন্য মোবাইল প্লেসমেন্ট */
+      .brand-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
       }
 
       .menu-toggle {
         display: flex;
+        margin-left: auto; /* ৩ ডট ডানপাশে রাখার জন্য */
       }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
-        right: 6%;
+        top: 65px;
+        right: 5%;
         background: rgba(23, 23, 26, 0.98);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(15px);
         flex-direction: column;
-        width: 220px;
+        width: 230px;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         gap: 15px;
         border: 1px solid rgba(255,255,255,0.1);
         text-align: left;
@@ -266,15 +349,13 @@
       }
 
       .hero {
-        padding-top: 120px;
-        padding-bottom: 50px;
-        height: auto;
-        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 40px;
         align-items: flex-end;
       }
 
       .hero-overlay {
-        background: linear-gradient(to top, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.2) 60%, rgba(18, 18, 20, 0) 100%);
+        background: linear-gradient(to top, rgba(18, 18, 20, 0.96) 30%, rgba(18, 18, 20, 0.2) 65%, rgba(18, 18, 20, 0) 100%);
       }
 
       .hero-content {
@@ -285,37 +366,50 @@
       }
 
       .hero-title {
-        font-size: 36px;
+        font-size: 34px;
       }
 
       .social-links {
         justify-content: center;
+      }
+
+      .page-view {
+        padding: 110px 6% 40px 6%;
+        justify-content: flex-start;
+      }
+
+      .page-title {
+        font-size: 30px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+  <!-- Premium Top Header Bar -->
   <header>
+    <!-- Brand Name (Mobile Center & Desktop Left) -->
+    <a href="#" class="brand-logo" onclick="closePages()">WASI ISRAK <span>ARPON</span></a>
+
+    <!-- Navigation Links -->
     <nav>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">ABOUT ME</a></li>
-        <li><a href="#academic">ACADEMIC</a></li>
-        <li><a href="#education">HIGHER EDUCATION</a></li>
-        <li><a href="#professional">PROFESSIONAL PRACTICE</a></li>
-        <li><a href="#memories">MEMORIES</a></li>
-        <li><a href="#contact" class="nav-btn-highlight">CONTACT-LET'S TALK</a></li>
+        <li><a onclick="openPage('about')">ABOUT ME</a></li>
+        <li><a onclick="openPage('academic')">ACADEMIC</a></li>
+        <li><a onclick="openPage('education')">HIGHER EDUCATION</a></li>
+        <li><a onclick="openPage('professional')">PROFESSIONAL PRACTICE</a></li>
+        <li><a onclick="openPage('memories')">MEMORIES</a></li>
+        <li><a onclick="openPage('contact')" class="nav-btn-highlight">CONTACT-LET'S TALK</a></li>
       </ul>
     </nav>
 
-    <!-- Mobile 3 Dot Menu Icon -->
+    <!-- Mobile 3-Dot Bar Button -->
     <div class="menu-toggle" id="menuToggle">
       <i class="fas fa-ellipsis-v"></i>
     </div>
   </header>
 
-  <!-- Hero Main Section -->
+  <!-- Fixed Main Hero Screen -->
   <section class="hero">
     <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     <div class="hero-overlay"></div>
@@ -325,7 +419,7 @@
       <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
       <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
       
-      <!-- Social Media Buttons -->
+      <!-- Social Media Links (WhatsApp, Email, LinkedIn) -->
       <div class="social-links">
         <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -334,89 +428,108 @@
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="page-section">
-    <div class="section-number">01.</div>
-    <h2 class="section-title">ABOUT ME</h2>
-    <p class="section-content">
-      Welcome to my portfolio! I am Wasi Israk Arpon, a dedicated Business Administrator with a passion for driving strategic growth, optimizing operational management, and delivering effective business solutions.
-    </p>
-  </section>
+  <!-- 1. ABOUT ME PAGE -->
+  <div id="page-about" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">01.</div>
+    <h1 class="page-title">ABOUT ME</h1>
+    <div class="page-content">
+      <p>Welcome! I am Wasi Israk Arpon, a dedicated Business Administrator with a strong foundation in management, strategic analysis, and commercial leadership. I specialize in optimizing organizational efficiency, driving business growth, and managing complex commercial deals.</p>
+    </div>
+  </div>
 
-  <!-- Academic Section -->
-  <section id="academic" class="page-section">
-    <div class="section-number">02.</div>
-    <h2 class="section-title">ACADEMIC</h2>
-    <p class="section-content">
-      Details about my educational foundation, school & college qualifications, and academic achievements.
-    </p>
-  </section>
+  <!-- 2. ACADEMIC PAGE -->
+  <div id="page-academic" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">02.</div>
+    <h1 class="page-title">ACADEMIC</h1>
+    <div class="page-content">
+      <p>Here you can detail your academic background, school & college achievements, major subjects, and primary skills.</p>
+    </div>
+  </div>
 
-  <!-- Higher Education Section -->
-  <section id="education" class="page-section">
-    <div class="section-number">03.</div>
-    <h2 class="section-title">HIGHER EDUCATION</h2>
-    <p class="section-content">
-      Information regarding my university degree, specialized courses in Business Administration, and certifications.
-    </p>
-  </section>
+  <!-- 3. HIGHER EDUCATION PAGE -->
+  <div id="page-education" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">03.</div>
+    <h1 class="page-title">HIGHER EDUCATION</h1>
+    <div class="page-content">
+      <p>Information regarding your university degrees in Business Administration, specialized business development courses, and professional certifications.</p>
+    </div>
+  </div>
 
-  <!-- Professional Practice Section -->
-  <section id="professional" class="page-section">
-    <div class="section-number">04.</div>
-    <h2 class="section-title">PROFESSIONAL PRACTICE</h2>
-    <p class="section-content">
-      My corporate experience, business strategy projects, digital operations management, and portfolio of commercial deals.
-    </p>
-  </section>
+  <!-- 4. PROFESSIONAL PRACTICE PAGE -->
+  <div id="page-professional" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">04.</div>
+    <h1 class="page-title">PROFESSIONAL PRACTICE</h1>
+    <div class="page-content">
+      <p>Overview of your corporate experience, operations management, strategic planning, business expansion, and project portfolio.</p>
+    </div>
+  </div>
 
-  <!-- Memories Section -->
-  <section id="memories" class="page-section">
-    <div class="section-number">05.</div>
-    <h2 class="section-title">MEMORIES</h2>
-    <p class="section-content">
-      Highlights, career milestones, achievements, and photos from major events and projects.
-    </p>
-  </section>
+  <!-- 5. MEMORIES PAGE -->
+  <div id="page-memories" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">05.</div>
+    <h1 class="page-title">MEMORIES</h1>
+    <div class="page-content">
+      <p>A collection of career milestones, leadership events, award achievements, and key project highlights.</p>
+    </div>
+  </div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="page-section">
-    <div class="section-number">06.</div>
-    <h2 class="section-title">CONTACT - LET'S TALK</h2>
-    <p class="section-content">Feel free to reach out to me via any of the direct contact details below:</p>
-    
-    <div class="contact-box">
-      <div class="contact-item">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp: <a href="https://wa.me/60149382719" target="_blank">+60149382719</a></span>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <span>Email: <a href="mailto:wasiarpon@gmail.com">wasiarpon@gmail.com</a></span>
-      </div>
-      <div class="contact-item">
-        <i class="fab fa-linkedin"></i>
-        <span>LinkedIn: <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">Wasi Arpon Profile</a></span>
+  <!-- 6. CONTACT-LET'S TALK PAGE -->
+  <div id="page-contact" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">06.</div>
+    <h1 class="page-title">CONTACT - LET'S TALK</h1>
+    <div class="page-content">
+      <p>Feel free to connect with me directly through any of the following platforms:</p>
+      
+      <div class="contact-box">
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp: <a href="https://wa.me/60149382719" target="_blank">+60149382719</a></span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>Email: <a href="mailto:wasiarpon@gmail.com">wasiarpon@gmail.com</a></span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn: <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">Wasi Arpon Profile</a></span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- JavaScript for Navigation & Menu Toggle -->
+  <!-- JavaScript Setup -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
-    // Mobile Menu Toggle
+    // Toggle Mobile Navigation Menu
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
 
-    // Close mobile menu when clicking any link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
+    // Function to Open Specific Page
+    function openPage(pageId) {
+      closePages(); 
+      const selectedPage = document.getElementById('page-' + pageId);
+      if(selectedPage) {
+        selectedPage.classList.add('active');
+      }
+      navLinks.classList.remove('show'); 
+    }
+
+    // Function to Return to Fixed Home Screen
+    function closePages() {
+      const activePages = document.querySelectorAll('.page-view.active');
+      activePages.forEach(page => {
+        page.classList.remove('active');
       });
-    });
+    }
   </script>
 
 </body>
