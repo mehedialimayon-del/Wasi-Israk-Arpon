@@ -19,19 +19,42 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section - Fixed Full Screen Viewport */
+    /* Hero Section - Full Width & Height Cover */
     .hero {
       position: relative;
       width: 100vw;
       height: 100vh;
+      min-height: 600px;
       display: flex;
       align-items: center;
       padding: 0 8%;
-      background-color: #121214;
       overflow: hidden;
     }
 
-    /* Header Layer */
+    /* Full Background Image (পুরো স্ক্রিন জুড়ে ব্যাকগ্রাউন্ড) */
+    .hero-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center; /* আপনার পজিশন নিখুঁত রাখার জন্য */
+      z-index: 1;
+    }
+
+    /* Gradient Overlay (লেখা স্পষ্ট দেখানোর জন্য বাম দিকে হালকা ডার্ক শেড) */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(18, 18, 20, 0.95) 25%, rgba(18, 18, 20, 0.6) 55%, rgba(18, 18, 20, 0.1) 100%);
+      z-index: 2;
+    }
+
+    /* Top Navigation Bar */
     header {
       display: flex;
       justify-content: flex-end;
@@ -79,12 +102,12 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* Left Text Content */
+    /* Content Area */
     .hero-content {
-      width: 45%;
+      width: 50%;
       z-index: 3;
       position: relative;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .hero-subtitle {
@@ -102,10 +125,11 @@
       line-height: 1.05;
       margin-bottom: 20px;
       letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     .hero-desc {
-      color: #a0a0a0;
+      color: #cccccc;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -121,7 +145,7 @@
     .social-links a {
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(5px);
       border-radius: 50%;
       display: flex;
@@ -135,35 +159,6 @@
 
     .social-links a:hover {
       background: #ff5e24;
-    }
-
-    /* Right Side Image Setup - Head to Body Fit Focus */
-    .hero-image-container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 60%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* পুরো স্ক্রিন কভার করবে */
-      object-position: top center; /* ছবিটিকে উপর (মাথা) থেকে ফোকাস রেখে নিচের দিকে ক্রপ করবে */
-      opacity: 0.9;
-    }
-
-    /* Smooth Gradient Fade for Left Side Text */
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, #121214 35%, rgba(18, 18, 20, 0.6) 55%, rgba(18, 18, 20, 0) 100%);
-      z-index: 2;
     }
 
     /* Services Section */
@@ -271,7 +266,7 @@
       font-size: 12px;
     }
 
-    /* Mobile Responsive View */
+    /* Mobile Responsive */
     @media (max-width: 900px) {
       header {
         justify-content: center;
@@ -281,28 +276,18 @@
       }
       nav { margin-right: 0; }
       .hero {
-        flex-direction: column;
-        height: auto;
         padding-top: 140px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
+        height: auto;
+        min-height: 100vh;
       }
       .hero-content {
         width: 100%;
         text-align: center;
-        margin-top: 0;
       }
       .hero-title { font-size: 38px; }
-      .hero-image-container {
-        position: relative;
-        width: 100%;
-        height: 420px;
-        margin-top: 20px;
-      }
-      .hero-image {
-        object-position: top center;
-      }
       .hero-overlay {
-        background: linear-gradient(to bottom, #121214 20%, rgba(18, 18, 20, 0.4) 60%, rgba(18, 18, 20, 0) 100%);
+        background: linear-gradient(to bottom, rgba(18, 18, 20, 0.9) 30%, rgba(18, 18, 20, 0.5) 100%);
       }
       .social-links { justify-content: center; }
       .services-grid { grid-template-columns: 1fr; }
@@ -312,7 +297,7 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Header Section -->
   <header>
     <nav>
       <ul>
@@ -328,6 +313,10 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <!-- Full Screen Background Image -->
+    <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
+    
+    <!-- Dark Fade Gradient Overlay -->
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
@@ -341,11 +330,6 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
-    </div>
-
-    <!-- Right Image aligned from top head -->
-    <div class="hero-image-container">
-      <img class="hero-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
     </div>
   </section>
 
