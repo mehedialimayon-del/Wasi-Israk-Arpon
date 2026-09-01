@@ -295,4 +295,426 @@
       color: #b0b0b0;
       font-size: 14px;
       line-height: 1.8;
-      max
+      max-width: 800px;
+    }
+
+    /* LET'S TALK / CONTACT PAGE LUXURY STYLING */
+    .contact-wrapper {
+      max-width: 950px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .contact-intro {
+      color: #a0a0a0;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .contact-container-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .quick-contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(25, 25, 30, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 16px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: #ff5e24;
+      background: rgba(255, 94, 36, 0.12);
+      box-shadow: 0 8px 20px rgba(255, 94, 36, 0.2);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 94, 36, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #ff5e24;
+      transition: 0.3s;
+    }
+
+    .contact-card:hover .card-icon {
+      background: #ff5e24;
+      color: #ffffff;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-label {
+      font-size: 10px;
+      color: #ff5e24;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 2px;
+    }
+
+    .card-arrow {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      transition: 0.3s;
+    }
+
+    .contact-card:hover .card-arrow {
+      color: #ff5e24;
+      transform: translateX(3px);
+    }
+
+    /* Message Form */
+    .contact-form {
+      background: rgba(22, 22, 26, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .form-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-title i {
+      color: #ff5e24;
+    }
+
+    .input-group {
+      margin-bottom: 12px;
+    }
+
+    .input-group input, .input-group textarea {
+      width: 100%;
+      background: rgba(10, 10, 12, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 12px;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 12px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+      border-color: #ff5e24;
+      box-shadow: 0 0 8px rgba(255, 94, 36, 0.3);
+    }
+
+    .send-msg-btn {
+      width: 100%;
+      background: #ff5e24;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .send-msg-btn:hover {
+      background: #e04a15;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 94, 36, 0.4);
+    }
+
+    /* মোবাইল responsive */
+    @media (max-width: 950px) {
+      .hero {
+        grid-template-columns: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 5% 20px 5%;
+      }
+
+      .hero-bg-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-bg-image {
+        object-position: center top;
+        padding-top: 0;
+      }
+
+      .hero-overlay {
+        background: rgba(18, 18, 20, 0.78);
+      }
+
+      .hero-right-container {
+        grid-column: 1;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        padding-left: 0;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .home-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .menu-card {
+        justify-content: space-between;
+        padding: 11px 12px;
+        text-align: left;
+      }
+
+      .page-view {
+        padding: 80px 6% 20px 6%;
+        justify-content: flex-start;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
+      .contact-container-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand-logo" onclick="window.location.reload(); return false;">W<span class="i-orange">I</span>A</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg-wrapper">
+      <img class="hero-bg-image" src="IMG-20260831-WA0054.jpg" alt="WASI ISRAK ARPON" fetchpriority="high" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-right-container">
+      <div class="hero-subtitle">HELLO, MY NAME IS</div>
+      <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
+      <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
+      
+      <div class="social-links">
+        <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="home-menu-grid">
+        <div class="menu-card" onclick="openPage('about', this)">
+          <span><i class="fas fa-user"></i> ABOUT ME</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('academic', this)">
+          <span><i class="fas fa-book"></i> ACADEMIC</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('education', this)">
+          <span><i class="fas fa-graduation-cap"></i> EDUCATION</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('professional', this)">
+          <span><i class="fas fa-briefcase"></i> PROFESSIONAL</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('memories', this)">
+          <span><i class="fas fa-images"></i> MEMORIES</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card highlight-btn" onclick="openPage('contact', this)">
+          <span><i class="fas fa-comments"></i> LET'S TALK</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="page-about" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">01.</div>
+    <h1 class="page-title">ABOUT ME</h1>
+    <div class="page-content">
+      <p>Welcome! I am Wasi Israk Arpon, a dedicated Business Administrator with a strong foundation in management, strategic analysis, and commercial leadership.</p>
+    </div>
+  </div>
+
+  <div id="page-academic" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">02.</div>
+    <h1 class="page-title">ACADEMIC</h1>
+    <div class="page-content">
+      <p>Academic background, school & college qualifications, major subjects, and primary skills.</p>
+    </div>
+  </div>
+
+  <div id="page-education" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">03.</div>
+    <h1 class="page-title">HIGHER EDUCATION</h1>
+    <div class="page-content">
+      <p>University degrees in Business Administration, specialized courses, and professional certifications.</p>
+    </div>
+  </div>
+
+  <div id="page-professional" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">04.</div>
+    <h1 class="page-title">PROFESSIONAL PRACTICE</h1>
+    <div class="page-content">
+      <p>Corporate work experience, management strategies, distribution operations, and commercial project portfolio.</p>
+    </div>
+  </div>
+
+  <div id="page-memories" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">05.</div>
+    <h1 class="page-title">MEMORIES</h1>
+    <div class="page-content">
+      <p>Key achievements, photos from major events, leadership moments, and career milestones.</p>
+    </div>
+  </div>
+
+  <div id="page-contact" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    
+    <div class="contact-wrapper">
+      <div class="page-number">06.</div>
+      <h1 class="page-title">LET'S CONNECT</h1>
+      <p class="contact-intro">Feel free to reach out for professional collaborations, business inquiries, or just to say hi!</p>
+      
+      <div class="contact-container-grid">
+        <div class="quick-contact-cards">
+          
+          <a href="https://wa.me/60149382719" target="_blank" class="contact-card whatsapp-card">
+            <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="card-info">
+              <span class="card-label">WhatsApp Direct</span>
+              <span class="card-value">+60 149-382-719</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+          <a href="mailto:wasiarpon@gmail.com" class="contact-card email-card">
+            <div class="card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="card-info">
+              <span class="card-label">Official Email</span>
+              <span class="card-value">wasiarpon@gmail.com</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-card linkedin-card">
+            <div class="card-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="card-info">
+              <span class="card-label">LinkedIn Profile</span>
+              <span class="card-value">Wasi Israk Arpon</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+        </div>
+
+        <form class="contact-form" onsubmit="alert('Thank you! Your message has been sent successfully.'); return false;">
+          <h3 class="form-title"><i class="fas fa-paper-plane"></i> Send a Direct Message</h3>
+          
+          <div class="input-group">
+            <input type="text" placeholder="Your Full Name" required>
+          </div>
+          
+          <div class="input-group">
+            <input type="email" placeholder="Your Email Address" required>
+          </div>
+          
+          <div class="input-group">
+            <textarea rows="4" placeholder="Type your message here..." required></textarea>
+          </div>
+          
+          <button type="submit" class="send-msg-btn">
+            <span>SEND MESSAGE</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPage(pageId, element) {
+      closePages(); 
+      element.classList.add('active-highlight');
+
+      const selectedPage = document.getElementById('page-' + pageId);
+      if(selectedPage) {
+        selectedPage.classList.add('active');
+      }
+    }
+
+    function closePages() {
+      const allCards = document.querySelectorAll('.menu-card');
+      allCards.forEach(card => card.classList.remove('active-highlight'));
+
+      const activePages = document.querySelectorAll('.page-view.active');
+      activePages.forEach(page => {
+        page.classList.remove('active');
+      });
+    }
+  </script>
+
+</body>
+</html>
