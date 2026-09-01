@@ -1,4 +1,301 @@
-    /* LET'S TALK PAGE LUXURY STYLING */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASI ISRAK ARPON - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #121214;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* মূল লেআউট গ্রিড */
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      padding: 0 4%;
+      overflow: hidden;
+      background-color: #121214;
+    }
+
+    .hero-bg-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left top;
+      padding-top: 10px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(18, 18, 20, 0.05) 0%, rgba(18, 18, 20, 0.85) 60%, #121214 100%);
+      z-index: 2;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .brand-logo {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #000000;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+    }
+
+    .brand-logo .i-orange {
+      color: #ff5e24;
+    }
+
+    .hero-right-container {
+      grid-column: 2;
+      z-index: 3;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+    }
+
+    .hero-subtitle {
+      color: #ff5e24;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    .hero-desc {
+      color: #dddddd;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .social-links a {
+      width: 38px;
+      height: 38px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .social-links a:hover {
+      background: #ff5e24;
+      transform: translateY(-2px);
+      border-color: #ff5e24;
+    }
+
+    /* ৬টি বাটন গ্রিড */
+    .home-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+    .menu-card {
+      background: rgba(25, 25, 30, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 11px 10px;
+      border-radius: 6px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    .menu-card span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .menu-card i {
+      color: #ff5e24;
+      font-size: 12px;
+    }
+
+    .menu-card .arrow-icon {
+      font-size: 9px;
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+
+    .menu-card:hover, .menu-card.active-highlight {
+      background: #ff5e24;
+      border-color: #ff5e24;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 94, 36, 0.4);
+    }
+
+    .menu-card:hover i, .menu-card.active-highlight i,
+    .menu-card:hover .arrow-icon, .menu-card.active-highlight .arrow-icon {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    .menu-card.highlight-btn {
+      background: rgba(255, 94, 36, 0.25);
+      border-color: rgba(255, 94, 36, 0.5);
+    }
+
+    /* ফুলস্ক্রিন পেজ ভিউ */
+    .page-view {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 18, 20, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+      transform: translateY(20px);
+      overflow-y: auto;
+    }
+
+    .page-view.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 25px;
+      left: 6%;
+      color: #ff5e24;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 94, 36, 0.1);
+      padding: 8px 15px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 94, 36, 0.3);
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ff5e24;
+      color: #fff;
+    }
+
+    .page-number {
+      color: #ff5e24;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .page-content {
+      color: #b0b0b0;
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 800px;
+    }
+
+    /* LET'S TALK / CONTACT PAGE LUXURY STYLING */
     .contact-wrapper {
       max-width: 950px;
       width: 100%;
@@ -165,9 +462,264 @@
       box-shadow: 0 5px 15px rgba(255, 94, 36, 0.4);
     }
 
-    @media (max-width: 768px) {
+    /* মোবাইল responsive */
+    @media (max-width: 950px) {
+      .hero {
+        grid-template-columns: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 5% 20px 5%;
+      }
+
+      .hero-bg-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-bg-image {
+        object-position: center top;
+        padding-top: 0;
+      }
+
+      .hero-overlay {
+        background: rgba(18, 18, 20, 0.78);
+      }
+
+      .hero-right-container {
+        grid-column: 1;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        padding-left: 0;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .home-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .menu-card {
+        justify-content: space-between;
+        padding: 11px 12px;
+        text-align: left;
+      }
+
+      .page-view {
+        padding: 80px 6% 20px 6%;
+        justify-content: flex-start;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
       .contact-container-grid {
         grid-template-columns: 1fr;
         gap: 20px;
       }
     }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand-logo" onclick="window.location.reload(); return false;">W<span class="i-orange">I</span>A</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg-wrapper">
+      <img class="hero-bg-image" src="https://i.postimg.cc/0QjLBZwB/IMG-20260901-WA0001.jpg" alt="WASI ISRAK ARPON">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-right-container">
+      <div class="hero-subtitle">HELLO, MY NAME IS</div>
+      <h1 class="hero-title">WASI ISRAK<br>ARPON</h1>
+      <div class="hero-desc">I'M A BUSINESS ADMINISTRATOR</div>
+      
+      <div class="social-links">
+        <a href="https://wa.me/60149382719" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:wasiarpon@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="home-menu-grid">
+        <div class="menu-card" onclick="openPage('about', this)">
+          <span><i class="fas fa-user"></i> ABOUT ME</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('academic', this)">
+          <span><i class="fas fa-book"></i> ACADEMIC</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('education', this)">
+          <span><i class="fas fa-graduation-cap"></i> EDUCATION</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('professional', this)">
+          <span><i class="fas fa-briefcase"></i> PROFESSIONAL</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card" onclick="openPage('memories', this)">
+          <span><i class="fas fa-images"></i> MEMORIES</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+        <div class="menu-card highlight-btn" onclick="openPage('contact', this)">
+          <span><i class="fas fa-comments"></i> LET'S TALK</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01. ABOUT ME PAGE -->
+  <div id="page-about" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">01.</div>
+    <h1 class="page-title">ABOUT ME</h1>
+    <div class="page-content">
+      <p>Welcome! I am Wasi Israk Arpon, a dedicated Business Administrator with a strong foundation in management, strategic analysis, and commercial leadership.</p>
+    </div>
+  </div>
+
+  <!-- 02. ACADEMIC PAGE -->
+  <div id="page-academic" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">02.</div>
+    <h1 class="page-title">ACADEMIC</h1>
+    <div class="page-content">
+      <p>Academic background, school & college qualifications, major subjects, and primary skills.</p>
+    </div>
+  </div>
+
+  <!-- 03. EDUCATION PAGE -->
+  <div id="page-education" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">03.</div>
+    <h1 class="page-title">HIGHER EDUCATION</h1>
+    <div class="page-content">
+      <p>University degrees in Business Administration, specialized courses, and professional certifications.</p>
+    </div>
+  </div>
+
+  <!-- 04. PROFESSIONAL PAGE -->
+  <div id="page-professional" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">04.</div>
+    <h1 class="page-title">PROFESSIONAL PRACTICE</h1>
+    <div class="page-content">
+      <p>Corporate work experience, management strategies, distribution operations, and commercial project portfolio.</p>
+    </div>
+  </div>
+
+  <!-- 05. MEMORIES PAGE -->
+  <div id="page-memories" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    <div class="page-number">05.</div>
+    <h1 class="page-title">MEMORIES</h1>
+    <div class="page-content">
+      <p>Key achievements, photos from major events, leadership moments, and career milestones.</p>
+    </div>
+  </div>
+
+  <!-- 06. CONTACT / LET'S TALK PAGE -->
+  <div id="page-contact" class="page-view">
+    <div class="back-btn" onclick="closePages()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    
+    <div class="contact-wrapper">
+      <div class="page-number">06.</div>
+      <h1 class="page-title">LET'S CONNECT</h1>
+      <p class="contact-intro">Feel free to reach out for professional collaborations, business inquiries, or just to say hi!</p>
+      
+      <div class="contact-container-grid">
+        <!-- Direct Quick Connect Cards -->
+        <div class="quick-contact-cards">
+          
+          <a href="https://wa.me/60149382719" target="_blank" class="contact-card whatsapp-card">
+            <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="card-info">
+              <span class="card-label">WhatsApp Direct</span>
+              <span class="card-value">+60 149-382-719</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+          <a href="mailto:wasiarpon@gmail.com" class="contact-card email-card">
+            <div class="card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="card-info">
+              <span class="card-label">Official Email</span>
+              <span class="card-value">wasiarpon@gmail.com</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/wasi-arpon-19740b3b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-card linkedin-card">
+            <div class="card-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="card-info">
+              <span class="card-label">LinkedIn Profile</span>
+              <span class="card-value">Wasi Israk Arpon</span>
+            </div>
+            <i class="fas fa-external-link-alt card-arrow"></i>
+          </a>
+
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <form class="contact-form" onsubmit="alert('Thank you! Your message has been sent successfully.'); return false;">
+          <h3 class="form-title"><i class="fas fa-paper-plane"></i> Send a Direct Message</h3>
+          
+          <div class="input-group">
+            <input type="text" placeholder="Your Full Name" required>
+          </div>
+          
+          <div class="input-group">
+            <input type="email" placeholder="Your Email Address" required>
+          </div>
+          
+          <div class="input-group">
+            <textarea rows="4" placeholder="Type your message here..." required></textarea>
+          </div>
+          
+          <button type="submit" class="send-msg-btn">
+            <span>SEND MESSAGE</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPage(pageId, element) {
+      closePages(); 
+      element.classList.add('active-highlight');
+
+      const selectedPage = document.getElementById('page-' + pageId);
+      if(selectedPage) {
+        selectedPage.classList.add('active');
+      }
+    }
+
+    function closePages() {
+      const allCards = document.querySelectorAll('.menu-card');
+      allCards.forEach(card => card.classList.remove('active-highlight'));
+
+      const activePages = document.querySelectorAll('.page-view.active');
+      activePages.forEach(page => {
+        page.classList.remove('active');
+      });
+    }
+  </script>
+
+</body>
+</html>
